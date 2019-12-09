@@ -1,32 +1,36 @@
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
-
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
     <data>
-
         <variable
-            name="presenter"
-            type="com.hly.MainActivity.Presenter"/>
+            name="listener"
+            type="com.hxm.MainActivity.Listener"/>
+        <variable
+            name="skip"
+            type="com.hxm.MainActivity.Skip"/>
+        <variable
+            name="login"
+            type="com.hxm.MainActivity.Login"/>
     </data>
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:orientation="vertical">
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:onClick="@{presenter.onClickSimpleDemo}"
-            android:text="@{@string/demo_simple}"
-            android:textColor="@{@color/textColorDay}"/>
+            android:layout_height="wrap_content"
+            android:onClick="@{listener.OnClick}"
+            android:text="第一个点击事件" />
 
-
-
-
-
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{skip.OnBtn}"
+            android:text="第一个点击跳转界面显示数据" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{login.OnLogin}"
+            android:text="第一个点击跳转界面到登录" />
     </LinearLayout>
-
 </layout>
