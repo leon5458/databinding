@@ -7,9 +7,6 @@
             name="item"
             type="com.hxm.Item"/>
 
-<!--        <variable-->
-<!--            name="image"-->
-<!--            type="com.hxm.DataActivity.Image"/>-->
     </data>
 
     <LinearLayout

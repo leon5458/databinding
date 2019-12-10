@@ -1,12 +1,10 @@
 package com.hxm;
-
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
-import android.widget.EditText;
-import android.widget.TextView;
-
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import com.hxm.databinding.LoginActivityLayoutBinding;
 
 /**
  * ********文件描述：********
@@ -16,12 +14,16 @@ import androidx.appcompat.app.AppCompatActivity;
  * ********版本号：1********
  */
 public class LoginActivity extends AppCompatActivity {
-    private TextView txt;
+
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState){
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_activity_layout);
-        txt = findViewById(R.id.textview);
-        txt.setMovementMethod(ScrollingMovementMethod.getInstance());
+        // 1.获取<data />标签对象
+        LoginActivityLayoutBinding binding= DataBindingUtil.setContentView(this,R.layout.login_activity_layout);
+        // 2.创建User对象
+        User user = new User("胡小牧","26");
+        // 3.绑定到user到布局对象中
+        binding.setUser(user);
     }
 }
